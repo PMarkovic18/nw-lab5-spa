@@ -17,6 +17,8 @@ npm run build
 
 ### Komponente labosa
 ```
+https://nw-lab5-spa.vercel.app/
+
 1.interpolation/one-way binding
 Napravljeno 
 src/components/TaskItem.vue :3

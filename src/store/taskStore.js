@@ -11,7 +11,7 @@ export const useTaskStore = defineStore("task", {
             { id: 6, completed: false, category: "Personal", name: "Sleep" },
             { id: 7, completed: false, category: "Work", name: "Quit the job" },
         ],
-        categories: [],
+        categories: ["Work", "Personal", "Shopping"],
     }),
     actions: {
         addTask(task) {
