@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <router-link to="/">Home</router-link> |
     <router-link to="/tasks">Tasks</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
@@ -7,8 +8,19 @@
 </template>
 
 
+<script>
+import { useTaskStore } from "@/store/taskStore";
+export default {
+  onMounted() {
+    const store = useTaskStore(); 
 
+    
+      store.fetchCategories();
 
+    return ;
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
