@@ -1,18 +1,37 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Welcome to My Vue 3 SPA</h1>
+    <p>Message: {{ message }}</p>
   </div>
+  <div>
+    <input v-model="message" placeholder="Edit the message" />
+    <p>You typed: {{ message }}</p>
+  </div>
+  <div>
+    <button @click="updateMessage">Click Me</button>
+  </div>
+  <p>Message length: {{ messageLength }}</p>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  computed: {
+    messageLength() {
+      return this.message.length;
+    },
+  },
+  methods: {
+    updateMessage() {
+      this.message = "The message has been updated!";
+    },
+  },
+  data() {
+    return {
+      message: "Hello, this is one-way binding!",
+    };
+  },
+  mounted() {
+    console.log("Component has been mounted!");
+  },
+};
 </script>
